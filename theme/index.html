@@ -5,14 +5,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mollas</title>
-  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-  <link href="index.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.korzh.com/metroui/v4/css/metro-all.min.css">
+  <link href="index.css" rel="stylesheet" />
 </head>
 <body>
-  
-  <script src="index.js">
-  </script>
+  <div data-role="appbar" data-expand-point="md">
+    <h1 class="brand no-hover">
+      Mollas
+    </h1>
+    <ul class="app-bar-menu">
+      <li><a href="#">Home</a></li>
+    </ul>
+  </div>
+  <div class="main">
+    <div class="card post">
+      <h3>Title</h3>
+      <p>Content</p>
+      <button>Read More</button>
+    </div>
+  </div>
+  <div class="bottom-nav pos-absolute">
+    <button class="button">
+      <span class="icon mif-home"></span>
+      <span class="label">Home</span>
+    </button>
+    <button class="button">
+      <span class="icon mif-menu"></span>
+      <span class="label">Settings</span>
+    </button>
+  </div>
+  <script src="https://cdn.korzh.com/metroui/v4/js/metro.min.js"></script>
+  <script src="index.js" type="module"></script>
 </body>
 
 </html>
