@@ -1,5 +1,3 @@
 # Arabic-Blog
 
-```python
-key = "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"
-```
+- Key: Z2hwX2N6MjJWY1lEbDdQdnJ3bm95bWxFUXJ0M3VsZHJ1SjNPa0tOaAo=
