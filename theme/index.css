@@ -7,6 +7,11 @@
   margin-top: 64px;
 }
 
-.post{
+.card{
   padding:10px;
 }
+
+.page{
+  display:none;
+}
+

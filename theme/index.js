@@ -21,27 +21,17 @@ function getCookie(cname) {
   return "";
 }
 
-var myClass = "10";
+var myClass = getCookie("myClass");
 
 if(myClass == ""){
   Metro.dialog.create({
-    title:"Class",
-    content:"<p>Select your class</p>",
+    title:"Welcome to Mollas",
+    content:"<p>Welcome to our arabic website, please select your class and update settings.</p>",
     actions: [
       {
-        caption: "10",
-        cls: "js-dialog-close",
-        onclick: () => setCookie("myClass","10",10)
-      },
-      {
-        caption:"+1",
-        cls: "js-dialog-close",
-        onclick: () => setCookie("myClass","11",10)
-      },
-      {
-        caption: "+2",
-        cls: "js-dialog-close",
-        onclick: () => setCookie("myClass", "12", 10)
+        caption: "Ok",
+        cls: "js-dialog-close success rounded",
+        onclick: () => setPage("settings")
       }
     ]
   });
@@ -52,6 +42,20 @@ if(myClass == ""){
 let navList = document.querySelector(".app-bar-menu");
 for(let i = 1; i < 5; i++){
   let c = navList.innerHTML;
-  c = c + ' <li><a href="#" class="dropdown-toggle">Unit '+i+'</a><ul class="d-menu" data-role="dropdown"><li><a href="#">Lesson 1</a></li><li><a href="#">Lesson 2</a></li><li><a href="#">Lesson 3</a></li></ul></li>';
+  let unitLink1 = "/pages/class-"+myClass+"-unit-"+i+"lesson-1.html";
+  let unitLink2 = "/pages/class-"+myClass+"-unit-"+i+"lesson-2.html";
+  let unitLink3 = "/pages/class-"+myClass+"-unit-"+i+"lesson-3.html";
+  c = c + ' <li><a href="#" class="dropdown-toggle">Unit '+i+'</a><ul class="d-menu" data-role="dropdown"><li><a href="'+unitLink1+'">Lesson 1</a></li><li><a href="'+unitLink2+'">Lesson 2</a></li><li><a href="'+unitLink3+'">Lesson 3</a></li></ul></li>';
   navList.innerHTML = c;
 }
+
+setPage("home");
+
+const classSelector = document.querySelector('.class-selector');
+
+classSelector.addEventListener('change',(selected) => {
+  setCookie("myClass",selected+"");
+});
+
+
+setClassSelect(myClass);

@@ -7,7 +7,9 @@
   <title>Mollas</title>
   <link rel="stylesheet" href="https://cdn.korzh.com/metroui/v4/css/metro-all.min.css">
   <link href="index.css" rel="stylesheet" />
+  <script src="module.js"></script>
 </head>
+
 <body>
   <div data-role="appbar" data-expand-point="md">
     <h1 class="brand no-hover">
@@ -18,21 +20,33 @@
     </ul>
   </div>
   <div class="main">
-    <div class="card post">
-      <h3>Post 1</h3>
-      <p>Post 1 content here</p>
+    <div class="home page">
+      <div class="card post">
+        <h3>Post 1</h3>
+        <p>Post 1 content here</p>
+      </div>
+      <div class="card post">
+        <h3>Post 2</h3>
+        <p>Post 2 content here</p>
+      </div>
     </div>
-    <div class="card post">
-      <h3>Post 2</h3>
-      <p>Post 2 content here</p>
+    <div class="settings page">
+      <div class="card" style="padding:15px;">
+        <h4>Your class</h4>
+        <select data-role="select" class="class-selector">
+          <option value="10">Class 10</option>
+          <option value="11">Class 11</option>
+          <option value="12">Class 12</option>
+        </select>
+      </div>
     </div>
   </div>
   <div class="bottom-nav pos-fixed">
-    <button class="button">
+    <button class="button" onclick="setPage('home')">
       <span class="icon mif-home"></span>
       <span class="label">Home</span>
     </button>
-    <button class="button">
+    <button class="button" onclick="setPage('settings')">
       <span class="icon mif-menu"></span>
       <span class="label">Settings</span>
     </button>
