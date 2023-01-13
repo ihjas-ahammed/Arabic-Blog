@@ -47,6 +47,7 @@
 
 .bottom-bar>button:hover{
   background: #f56;
+  border:none;
 }
 
 .bottom-bar>button:active{
