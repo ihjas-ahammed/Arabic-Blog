@@ -7,6 +7,29 @@ function getPageElement(className){
   return null;
 }
 
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
 function setPage(className){
   let pages = document.getElementsByClassName("page");
   for (let x = 0; x < pages.length; x++) {
@@ -16,4 +39,17 @@ function setPage(className){
   let pageEl = getPageElement(className);
   pageEl.style.display = "block";
   
+}
+
+function updateMenu(){
+  let myClass = getCookie('myClass');
+  let navList = document.querySelector(".app-bar-menu");
+  let c = "";
+  for (let i = 1; i < 5; i++) {
+    let unitLink1 = "/pages/class-" + myClass + "-unit-" + i + "lesson-1.html";
+    let unitLink2 = "/pages/class-" + myClass + "-unit-" + i + "lesson-2.html";
+    let unitLink3 = "/pages/class-" + myClass + "-unit-" + i + "lesson-3.html";
+    c = c + ' <li><a href="#" class="dropdown-toggle">Unit ' + i + '</a><ul class="d-menu" data-role="dropdown"><li><a href="' + unitLink1 + '">Lesson 1</a></li><li><a href="' + unitLink2 + '">Lesson 2</a></li><li><a href="' + unitLink3 + '">Lesson 3</a></li></ul></li>';
+    navList.innerHTML = c;
+  }
 }

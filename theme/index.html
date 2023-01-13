@@ -11,12 +11,11 @@
 </head>
 
 <body>
-  <div data-role="appbar" data-expand-point="md">
+  <div class="top-bar" data-role="appbar" data-expand-point="md">
     <h1 class="brand no-hover">
       Mollas
     </h1>
-    <ul class="app-bar-menu">
-      <li><a href="#">Home</a></li>
+    <ul class="menu app-bar-menu">
     </ul>
   </div>
   <div class="main">
@@ -33,7 +32,7 @@
     <div class="settings page">
       <div class="card" style="padding:15px;">
         <h4>Your class</h4>
-        <select data-role="select" class="class-selector">
+        <select class="select rounded class-selector">
           <option value="10">Class 10</option>
           <option value="11">Class 11</option>
           <option value="12">Class 12</option>
@@ -41,7 +40,7 @@
       </div>
     </div>
   </div>
-  <div class="bottom-nav pos-fixed">
+  <div class="bottom-nav bottom-bar pos-fixed">
     <button class="button" onclick="setPage('home')">
       <span class="icon mif-home"></span>
       <span class="label">Home</span>

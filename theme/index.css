@@ -11,7 +11,37 @@
   padding:10px;
 }
 
+.post{
+  padding: 15px;
+}
+
 .page{
   display:none;
 }
 
+.top-bar{
+  background: #f45;
+  color:#fff;
+  
+  box-shadow: 0px 3px 4px #0005;
+}
+
+.top-bar .menu{
+  background: #fff2;
+  color:#fff;
+}
+
+.top-bar .menu a{
+  background: #fff;
+  color:#000;
+}
+
+.bottom-bar>button{
+  background: #f45;
+  color:#fff;
+}
+
+.bottom-bar>button:hover{
+  background: #f88;
+  color:#000;
+}
