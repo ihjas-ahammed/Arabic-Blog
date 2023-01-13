@@ -1,6 +1,7 @@
-setCookie("myClass","",10);
+// setCookie("myClass","",10);
 
 var myClass = getCookie("myClass");
+if(myClass == null) myClass = "10";
 
 if(myClass == ""){
   Metro.dialog.create({

@@ -43,12 +43,13 @@ function setPage(className){
 
 function updateMenu(){
   let myClass = getCookie('myClass');
+  
   let navList = document.querySelector(".app-bar-menu");
   let c = "";
   for (let i = 1; i < 5; i++) {
-    let unitLink1 = "/pages/class-" + myClass + "-unit-" + i + "lesson-1.html";
-    let unitLink2 = "/pages/class-" + myClass + "-unit-" + i + "lesson-2.html";
-    let unitLink3 = "/pages/class-" + myClass + "-unit-" + i + "lesson-3.html";
+    let unitLink1 = "/pages/class-" + myClass + "_unit-" + i + "_lesson-1.html";
+    let unitLink2 = "/pages/class-" + myClass + "_unit-" + i + "_lesson-2.html";
+    let unitLink3 = "/pages/class-" + myClass + "_unit-" + i + "_lesson-3.html";
     c = c + ' <li><a href="#" class="dropdown-toggle">Unit ' + i + '</a><ul class="d-menu" data-role="dropdown"><li><a href="' + unitLink1 + '">Lesson 1</a></li><li><a href="' + unitLink2 + '">Lesson 2</a></li><li><a href="' + unitLink3 + '">Lesson 3</a></li></ul></li>';
     navList.innerHTML = c;
   }
