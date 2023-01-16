@@ -44,7 +44,8 @@ function setPage(className) {
   } else {
     var myClass = className;
     let navList = document.querySelector(".app-bar-menu");
-    let c = "<li><a href='#'>Home</li>";
+    updateMenu();
+    let c = navList.innerHTML;
     for (let i = 1; i < 5; i++) {
       let unitLink1 = "/pages/" + myClass + "_unit-" + i + "_lesson-1.html";
       let unitLink2 = "/pages/" + myClass + "_unit-" + i + "_lesson-2.html";
@@ -59,6 +60,6 @@ function setPage(className) {
 function updateMenu() {
 
   let navList = document.querySelector(".app-bar-menu");
-  c = "<li><a href='#'>Home</a></li>"
+  c = "<li><a href=\".\">Home</a></li>"
   navList.innerHTML = c;
 }
