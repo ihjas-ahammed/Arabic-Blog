@@ -37,17 +37,44 @@
   color:#000;
 }
 
+
+.bottom-bar{
+  display: flex;
+  height:65px;
+}
+
 .bottom-bar>button{
   background: #e34;
   color:#fff;
+  border: none;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-bar>button>.icon{
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.mif-home{
+  padding-bottom: 5px;
+  padding-top:2px;
+}
+
+.bottom-bar>button>.label{
+  font-size: 15px;
 }
 
 .bottom-bar>button:hover{
-  background: #f56;
-  border:none;
+  color:#fff;
+  
+  background:#eaa;
 }
 
 .bottom-bar>button:active{
-  background: #f45;
-  color:#fff;
+  box-shadow: 0px 0px 10px #0005;
 }

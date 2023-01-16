@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mollas</title>
+  <title>Sukoon</title>
   <link rel="stylesheet" href="https://cdn.korzh.com/metroui/v4/css/metro-all.min.css">
   <link href="index.css" rel="stylesheet" />
   <script src="module.js"></script>
@@ -13,7 +13,7 @@
 <body>
   <div class="top-bar" data-role="appbar" data-expand-point="md">
     <h1 class="brand no-hover">
-      Mollas
+      Sukoon
     </h1>
     <ul class="menu app-bar-menu">
     </ul>
@@ -29,25 +29,41 @@
         <p>Post 2 content here</p>
       </div>
     </div>
-    <div class="settings page">
-      <div class="card" style="padding:15px;">
-        <h4>Your class</h4>
-        <select class="select rounded class-selector">
-          <option value="10">Class 10</option>
-          <option value="11">Class 11</option>
-          <option value="12">Class 12</option>
-        </select>
+    <div class="classx page">
+      <div class="card post">
+        <h3>Class 10</h3>
+        <p>Posts here.</p>
+      </div>
+    </div>
+    <div class="classxi page">
+      <div class="card post">
+        <h3>Class 11</h3>
+        <p>Posts here.</p>
+      </div>
+    </div>
+    <div class="classxii page">
+      <div class="card post">
+        <h3>Class 12</h3>
+        <p>Posts here.</p>
       </div>
     </div>
   </div>
   <div class="bottom-nav bottom-bar pos-fixed">
-    <button class="btm-button button" onclick="setPage('home')">
+    <button class="btm-button" onclick="setPage('home')">
       <span class="icon mif-home"></span>
       <span class="label">Home</span>
     </button>
-    <button class="btm-button button" onclick="setPage('settings')">
-      <span class="icon mif-menu"></span>
-      <span class="label">Settings</span>
+    <button class="btm-button" onclick="setPage('classx')">
+      <span class="icon">X</span>
+      <span class="label">Class 10</span>
+    </button>
+    <button class="btm-button" onclick="setPage('classxi')">
+      <span class="icon">XI</span>
+      <span class="label">Class 11</span>
+    </button>
+    <button class="btm-button" onclick="setPage('classxii')">
+      <span class="icon">XII</span>
+      <span class="label">Class 12</span
     </button>
   </div>
   <script src="https://cdn.korzh.com/metroui/v4/js/metro.min.js"></script>

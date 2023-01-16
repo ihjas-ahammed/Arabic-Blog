@@ -1,8 +1,8 @@
-function getPageElement(className){
+function getPageElement(className) {
   let pages = document.getElementsByClassName("page");
-  for(let x = 0; x < pages.length; x ++){
+  for (let x = 0; x < pages.length; x++) {
     let page = pages[x];
-    if(page.classList.contains(className)) return page;
+    if (page.classList.contains(className)) return page;
   }
   return null;
 }
@@ -30,7 +30,7 @@ function getCookie(cname) {
   return "";
 }
 
-function setPage(className){
+function setPage(className) {
   let pages = document.getElementsByClassName("page");
   for (let x = 0; x < pages.length; x++) {
     let page = pages[x];
@@ -38,19 +38,27 @@ function setPage(className){
   }
   let pageEl = getPageElement(className);
   pageEl.style.display = "block";
-  
+
+  if (className == "home") {
+    updateMenu();
+  } else {
+    var myClass = className;
+    let navList = document.querySelector(".app-bar-menu");
+    let c = "<li><a href='#'>Home</li>";
+    for (let i = 1; i < 5; i++) {
+      let unitLink1 = "/pages/" + myClass + "_unit-" + i + "_lesson-1.html";
+      let unitLink2 = "/pages/" + myClass + "_unit-" + i + "_lesson-2.html";
+      let unitLink3 = "/pages/" + myClass + "_unit-" + i + "_lesson-3.html";
+      c = c + ' <li><a href="#" class="dropdown-toggle">Unit ' + i + '</a><ul class="d-menu" data-role="dropdown"><li><a href="' + unitLink1 + '">Lesson 1</a></li><li><a href="' + unitLink2 + '">Lesson 2</a></li><li><a href="' + unitLink3 + '">Lesson 3</a></li></ul></li>';
+      navList.innerHTML = c;
+    }
+  }
+
 }
 
-function updateMenu(){
-  let myClass = getCookie('myClass');
-  
+function updateMenu() {
+
   let navList = document.querySelector(".app-bar-menu");
-  let c = "";
-  for (let i = 1; i < 5; i++) {
-    let unitLink1 = "/pages/class-" + myClass + "_unit-" + i + "_lesson-1.html";
-    let unitLink2 = "/pages/class-" + myClass + "_unit-" + i + "_lesson-2.html";
-    let unitLink3 = "/pages/class-" + myClass + "_unit-" + i + "_lesson-3.html";
-    c = c + ' <li><a href="#" class="dropdown-toggle">Unit ' + i + '</a><ul class="d-menu" data-role="dropdown"><li><a href="' + unitLink1 + '">Lesson 1</a></li><li><a href="' + unitLink2 + '">Lesson 2</a></li><li><a href="' + unitLink3 + '">Lesson 3</a></li></ul></li>';
-    navList.innerHTML = c;
-  }
+  c = "<li><a href='#'>Home</a></li>"
+  navList.innerHTML = c;
 }
