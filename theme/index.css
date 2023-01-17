@@ -69,11 +69,10 @@
   font-size: 15px;
 }
 
-.bottom-bar>button:hover{
-  color:#fff;
+.bottom-bar>button.active{
   background:#eaa;
 }
 
 .bottom-bar>button:active{
-  box-shadow: 0px 0px 10px #0005;
+  background: #e45;
 }

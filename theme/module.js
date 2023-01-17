@@ -38,7 +38,14 @@ function setPage(className) {
   }
   let pageEl = getPageElement(className);
   pageEl.style.display = "block";
-
+  let btnEls = document.querySelector(".bottom-bar>button.active");
+  btnEls.classList.remove("active");
+  
+  let btnUs = document.querySelector("button."+className);
+  btnUs.classList.add("active");
+  
+  
+  
   if (className == "home") {
     updateMenu();
   } else {
